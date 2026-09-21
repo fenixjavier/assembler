@@ -1,4 +1,4 @@
-%TITLE "Ejercicio 1"
+%TITLE "Ejercicio 4"
 IDEAL
 DOSSEG
 MODEl small
@@ -12,18 +12,14 @@ Inicio:
 	mov ax, @data ; Inicializa la dirección de inicio del segmento de datos
 	mov ds, ax ; Copia dicha dirección al registro del segmento DS
 	
-	; 1. Escriba un programa en Assembler que almacene los siguientes valores en
-	; los registros indicados:
-	; a. AX = 00000000b
-	; b. BX = 01010101b
-	; c. CX = 00001111b
-	; d. DX = 11001100b
-	; Para asignar los valores a los registros utilice notación hexadecimal
-	; (BCH).
-	mov ax, 00h
-	mov bx, 55h
-	mov cx, 0Fh
-	mov dx, 0CCh
+	; 4. Dada la edad de una persona almacenada en el registro AX y el año actual
+	; almacenado en CX, realice un programa que calcule y almacene en el
+	; registro DX el año en que dicha persona nació.
+	mov ax, 26
+	mov cx, 2026
+
+	mov dx, cx
+	sub dx, ax
 Fin:
 	mov ah, 4Ch ; Carga función DOS de salida del programa
 	mov al, [codSalida] ; Pone el valor de salida en el acumulador bajo AL
